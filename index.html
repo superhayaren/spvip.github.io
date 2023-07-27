@@ -4,71 +4,101 @@
     <meta charset="UTF-8">
     <title>VIP视频解析</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            background-image: url("jl.jpg"); /* 替换为您的背景图链接 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
+
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* 添加透明度，可根据需求调整透明度 */
+            box-shadow: 0 0 10px rgba(0.3, 0, 0, 0.3);
+            border-radius: 10px;
         }
+
+
         .header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
+
         .logo {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: bold;
-            color: #333333;
+            color: #333;
         }
+
         .mode {
             display: flex;
             align-items: center;
         }
+
         .mode span {
             margin-right: 10px;
+            font-size: 16px;
+            color: #666;
         }
+
         .mode select {
-            padding: 5px 10px;
+            padding: 8px 12px;
             border: none;
             border-radius: 5px;
             outline: none;
+            font-size: 16px;
+            background-color: #f0f0f0;
+            color: #333;
         }
+
         .input {
-            margin-top: 20px;
             display: flex;
             align-items: center;
+            margin-bottom: 20px;
         }
+
         .input input {
             flex: 1;
-            padding: 10px 15px;
-            border: none;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
             border-radius: 5px 0 0 5px;
             outline: none;
+            font-size: 16px;
+            color: #333;
         }
+
         .input button {
-            padding: 10px 15px;
+            padding: 12px 20px;
             border: none;
             border-radius: 0 5px 5px 0;
-            background-color: #333333;
-            color: white;
+            background-color: #333;
+            color: #fff;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s ease;
         }
+
+        .input button:hover {
+            background-color: #555;
+        }
+
         .video {
-            margin-top: 20px;
             position: relative;
             width: 100%;
             height: 0;
             padding-bottom: 56.25%;
             overflow: hidden;
+            border-radius: 5px;
         }
+
         .video iframe {
             position: absolute;
             top: 0;
@@ -76,20 +106,23 @@
             width: 100%;
             height: 100%;
             border: none;
+            border-radius: 5px;
         }
+
         .footer {
-            margin-top: 20px;
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
+            color: #999;
+            font-size: 14px;
+            margin-top: 30px;
         }
-        .footer p {
-            color: #999999;
-        }
+
         .footer a {
-            color: #333333;
+            color: #333;
             text-decoration: none;
         }
+
         .footer a:hover {
             text-decoration: underline;
         }
@@ -103,7 +136,7 @@
                 <span>选择解析线路：</span>
                 <select id="line">
                     <option value="https://vip.bljiex.com/?v=">广告少解析</option>
-		    <option value="https://www.pangujiexi.com/pangu/?url=">盘古解析</option>
+                    <option value="https://www.pangujiexi.com/pangu/?url=">盘古解析</option>
                 </select>
             </div>
         </div>
@@ -115,17 +148,16 @@
             <iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="footer">
-            <p>本站不生产解析接口，本站只做解析接口的搬运工，所以无法干预接口内容，请自行甄别接口/视频中可能附带的广告或恶意代码！
-			<br/>
-			本站由wsy利用ai生成，仅供学习交流，如有侵权，请联系删除！
-			<br/>
-			本人qq 2659438020
-			</p>
+            <p>
+                本站不生产解析接口，本站只做解析接口的搬运工，所以无法干预接口内容，请自行甄别接口/视频中可能附带的广告或恶意代码！<br>
+                本站由wsy利用ai生成，仅供学习交流，如有侵权，请联系删除！<br>
+                本人qq 2659438020
+            </p>
         </div>
     </div>
     <script>
-        // 获取元素
-        var line = document.getElementById("line");
+         // 获取元素
+         var line = document.getElementById("line");
         var url = document.getElementById("url");
         var play = document.getElementById("play");
         var video = document.getElementById("video");
